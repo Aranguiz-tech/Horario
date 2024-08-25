@@ -1,0 +1,102 @@
+/* Estilo para el cuerpo del documento */
+body {
+    background-color: rgba(240, 240, 235, 0.225); /* Color de fondo de la página */
+    margin: 0; /* Elimina el margen predeterminado del navegador */
+    padding: 0; /* Elimina el relleno predeterminado del navegador */
+    text-align: center; /* Centra el contenido del body horizontalmente */
+}
+
+/* Estilo para el título principal */
+h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif; /* Fuente serif para el título */
+    margin: 20px 0; /* Espacio arriba y abajo del título */
+}
+
+/* Estilo para la tabla */
+table {
+    border: 2px solid black; /* Borde de la tabla */
+    border-collapse: collapse; /* Fusiona los bordes de las celdas */
+    margin: 20px auto; /* Centra la tabla horizontalmente y agrega espacio arriba y abajo */
+    width: 80%; /* Ajusta el ancho de la tabla según sea necesario */
+}
+
+/* Estilo para las celdas de la tabla y las cabeceras */
+th, td {
+    border: 1px solid black; /* Borde de las celdas */
+    padding: 0.5em; /* Espacio interno de las celdas */
+    font-family: monospace; /* Fuente monoespaciada para las celdas */
+    font-size: 1em; /* Tamaño de fuente uniforme */
+}
+
+/* Estilo para las cabeceras de la tabla */
+th {
+    color: rgb(6, 6, 6); /* Color del texto en las cabeceras */
+    font-size: 1.3em; /* Tamaño de fuente mayor para las cabeceras */
+    font-style: oblique; /* Estilo oblicuo para las cabeceras */
+}
+
+/* Estilo para las celdas de la tabla */
+td {
+    text-align: center; /* Centra el texto en las celdas */
+    font-size: 1.2em; /* Tamaño de fuente ligeramente mayor */
+    padding: 10px; /* Relleno adicional para las celdas */
+}
+
+/* Colores para las materias */
+.formulacion {
+    background-color: #e0f7fa; /* Azul claro para 'Formulación y evaluación de proyectos' */
+}
+
+.inteligencia {
+    background-color: #ffecb3; /* Amarillo pálido para 'Inteligencia Artificial' */
+}
+
+.arquitectura {
+    background-color: #ee3df43e; /* Verde claro para 'Arquitectura de computadores' */
+}
+
+.estructuras {
+    background-color: #d1c4e9; /* Morado claro para 'Estructuras discretas para ciencias de la computación' */
+}
+
+.software {
+    background-color: #fff9c4; /* Amarillo claro para 'Ingeniería de software' */
+}
+
+.software-lab {
+    background-color: #f8bbd0; /* Rosa claro para 'Ingeniería de software LAB' */
+}
+
+.fep {
+    background-color: #ffccbc; /* Naranja claro para 'FEP hasta 10:20 + Inteligencia Artificial' */
+}
+
+/* Estilo de hover para las celdas con contenido */
+td:not(.vacio):hover {
+    background-color: rgba(252, 254, 255, 0.72); /* Color de fondo al pasar el ratón por encima */
+}
+
+/* Estilo para las celdas vacías */
+.vacio {
+    background-color: rgba(244, 245, 235, 0.225); /* Color de fondo para celdas vacías */
+    position: relative; /* Posicionamiento relativo para permitir la colocación del texto 'Libre' */
+}
+
+/* Estilo de hover para celdas vacías */
+.vacio:hover {
+    background-color: rgba(37, 244, 18, 0.146); /* Color de fondo al pasar el ratón por encima */
+}
+
+/* Estilo para el texto 'Libre' en celdas vacías */
+.vacio:hover::after {
+    content: "Libre"; /* Texto que aparece en el hover */
+    color: white; /* Color del texto */
+    font-size: 14px; /* Tamaño de la fuente */
+    position: absolute; /* Posicionamiento absoluto para centrar el texto */
+    top: 50%; /* Alineación vertical */
+    left: 50%; /* Alineación horizontal */
+    transform: translate(-50%, -50%); /* Centra el texto */
+    background-color: rgba(0, 0, 0, 0.21); /* Fondo del texto */
+    padding: 2px 5px; /* Relleno del texto */
+    border-radius: 3px; /* Bordes redondeados para el texto */
+}
