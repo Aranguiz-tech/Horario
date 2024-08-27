@@ -67,9 +67,6 @@ td {
     background-color: #f8bbd0; /* Rosa claro para 'Ingeniería de software LAB' */
 }
 
-.fep {
-    background-color: #ffccbc; /* Naranja claro para 'FEP hasta 10:20 + Inteligencia Artificial' */
-}
 
 /* Estilo de hover para las celdas con contenido */
 td:not(.vacio):hover {
