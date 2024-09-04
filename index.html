@@ -40,55 +40,55 @@
                 <td class="inteligencia">Inteligencia Artificial</td>
                 <td class="formulacion">Formulación y evaluación de proyectos</td>
                 <td class="vacio"></td>
-                <td class="arquitectura">Arquitectura de computadores</td>
+                <td class="arquitectura">Arquitectura de computadores (Lab)</td>
             </tr>
             <tr>
                 <td>10:20 a.m</td>
                 <td class="inteligencia">Inteligencia Artificial</td>
                 <td class="formulacion">Formulación y evaluación de proyectos</td>
                 <td class="vacio"></td>
-                <td class="arquitectura">Arquitectura de computadores</td>
+                <td class="arquitectura">Arquitectura de computadores (Lab)</td>
             </tr>
             <tr>
                 <td>11:00 a.m</td>
                 <td class="inteligencia">Inteligencia Artificial</td>
                 <td class="vacio"></td>
                 <td class="vacio"></td>
-                <td class="arquitectura">Arquitectura de computadores</td>
+                <td class="arquitectura">Arquitectura de computadores (Lab)</td>
             </tr>
             <tr>
                 <td>11:10 a.m</td>
                 <td class="vacio"></td>
                 <td class="vacio"></td>
-                <td class="arquitectura">Arquitectura de computadores</td>
-                <td class="estructuras">Estructuras discretas para ciencias de la computación</td>
+                <td class="arquitectura">Arquitectura de computadores <br> 103AA</td>
+                <td class="estructuras">Estructuras discretas para ciencias de la computación <br> 103AA </td>
             </tr>
             <tr>
                 <td>11:50 a.m</td>
                 <td class="vacio"></td>
                 <td class="software">Ingeniería de software</td>
-                <td class="arquitectura">Arquitectura de computadores</td>
-                <td class="estructuras">Estructuras discretas para ciencias de la computación</td>
+                <td class="arquitectura">Arquitectura de computadores <br> 103AA</td>
+                <td class="estructuras">Estructuras discretas para ciencias de la computación <br> 103AA </td>
             </tr>
             <tr>
                 <td>12:30 p.m</td>
                 <td class="vacio"></td>
                 <td class="software">Ingeniería de software</td>
-                <td class="arquitectura">Arquitectura de computadores</td>
-                <td class="estructuras">Estructuras discretas para ciencias de la computación</td>
+                <td class="arquitectura">Arquitectura de computadores <br> 103AA</td>
+                <td class="estructuras">Estructuras discretas para ciencias de la computación <br> 103AA </td>
             </tr>
             <tr>
                 <td>12:40 p.m</td>
                 <td class="estructuras">Estructuras discretas para ciencias de la computación</td>
                 <td class="software">Ingeniería de software</td>
-                <td class="estructuras">Estructuras discretas para ciencias de la computación</td>
+                <td class="estructuras">Estructuras discretas para ciencias de la computación<br> 104AA</td>
                 <td class="vacio"></td>
             </tr>
             <tr>
                 <td>2:00 p.m</td>
                 <td class="estructuras">Estructuras discretas para ciencias de la computación</td>
                 <td class="software">Ingeniería de software</td>
-                <td class="estructuras">Estructuras discretas para ciencias de la computación</td>
+                <td class="estructuras">Estructuras discretas para ciencias de la computación<br> 104AA</td>
                 <td class="vacio"></td>
             </tr>
             <tr>
@@ -133,39 +133,40 @@
     <div id="profesor-info" class="profesor-info"></div>
 
     <script>
-        // Función para manejar clics o toques en pantallas táctiles
-        function agregarEventosCelda(celdas) {
-            celdas.forEach(function(celda) {
-                celda.addEventListener('click', function() {
-                    mostrarProfesor(celda.textContent);
-                });
-                celda.addEventListener('touchstart', function() {
-                    mostrarProfesor(celda.textContent);
-                });
-            });
-        }
+        // Información de profesores y salas
+        const infoClases = {
+            "arquitectura-lu-1540": { profesor: "Carlos Parra", sala: "A103AA" },
+            "arquitectura-mi-1110": { profesor: "Carlos Parra", sala: "A103AA" },
+            "arquitectura-lab": { profesor: "Carlos Parra", sala: "Lab3EspFACE" },
+            "estructuras-lu-1110": { profesor: "Brunny Troncoso", sala: "A102AA" },
+            "estructuras-lu-1240": { profesor: "Brunny Troncoso", sala: "A301AB" },
+            "estructuras-mi-1240": { profesor: "Brunny Troncoso", sala: "A104AA" },
+            "estructuras-ju-1110": { profesor: "Brunny Troncoso", sala: "A103AA" }
+        };
 
-        // Función para mostrar la ventana con el nombre del profesor
-        function mostrarProfesor(materia) {
-            var profesorInfo = document.getElementById('profesor-info');
-            var profesores = {
-                "Formulación y evaluación de proyectos": "Profesor: Freddy Banda",
-                "Inteligencia Artificial": "Profesor: Luis Crot",
-                "Estructuras discretas para ciencias de la computación": "Profesor: Brunny Troncoso",
-                "Arquitectura de computadores": "Profesor: Carlos Parra",
-                "Ingeniería de software": "Profesor: Sebastián Espinoza",
-                "Ingeniería de software LAB": "Profesor: Sebastián Espinoza"
-            };
-            profesorInfo.textContent = profesores[materia] || "Información no disponible";
+        // Función para mostrar la información del profesor y sala
+        function mostrarInfoClase(clase) {
+            const profesorInfo = document.getElementById('profesor-info');
+            if (infoClases[clase]) {
+                const { profesor, sala } = infoClases[clase];
+                profesorInfo.textContent = `Profesor: ${profesor} - Sala: ${sala}`;
+            } else {
+                profesorInfo.textContent = "Información no disponible";
+            }
             profesorInfo.classList.add('visible');
         }
 
-        // Al cargar la página, agregar eventos de clic y touchstart a las celdas
-        document.addEventListener('DOMContentLoaded', function() {
-            var celdas = document.querySelectorAll('td:not(.vacio)');
-            agregarEventosCelda(Array.from(celdas));
+        // Asignar eventos a las celdas con clases
+        document.addEventListener('DOMContentLoaded', function () {
+            const celdas = document.querySelectorAll('td:not(.vacio)');
+            celdas.forEach(function (celda) {
+                celda.addEventListener('click', function () {
+                    mostrarInfoClase(celda.className);
+                });
+            });
         });
     </script>
+
 </body>
 
 </html>
