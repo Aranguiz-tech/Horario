@@ -1,6 +1,6 @@
 /* Estilo para el cuerpo del documento */
 body {
-    background-color: rgba(240, 240, 235, 0.225);
+    background-color: rgba(241, 241, 198, 0.612);
     margin: 0;
     padding: 0;
     text-align: center;
@@ -37,6 +37,7 @@ th {
 }
 
 td {
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
     text-align: center;
     font-size: 1.2em;
     padding: 10px;
@@ -48,11 +49,16 @@ td {
 }
 
 .inteligencia {
-    background-color: #ffecb3;
+    background-color: #8bc8453f;
 }
-
+.inteligencia-lab {
+    background-color: #54f7a240;
+}
 .arquitectura {
     background-color: #ee3df43e;
+}
+.arquitectura-lab {
+    background-color: #75aeda55;
 }
 
 .estructuras {
@@ -64,34 +70,37 @@ td {
 }
 
 .software-lab {
-    background-color: #f8bbd0;
+    background-color: #ea432223;
+}
+.Practica {
+    background-color: #c00a0a3e;
 }
 
 /* Estilo de hover para las celdas con contenido */
+/* Estilo de hover para las celdas con contenido */
 td:not(.vacio):hover {
-    background-color: rgba(252, 254, 255, 0.72);
-    cursor: pointer;
+    background-color: rgba(157, 208, 208, 0.308); /* Efecto hover claro */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    transition: background-color 0.3s ease; /* Añade transición suave */
 }
 
 /* Estilo para las celdas vacías */
 .vacio {
-    background-color: rgba(244, 245, 235, 0.225);
+    background-color: rgba(226, 239, 111, 0.103);
     position: relative;
 }
 
 .vacio:hover {
-    background-color: rgba(37, 244, 18, 0.146);
+    background-color:rgba(157, 208, 208, 0.308)
 }
-
 .vacio:hover::after {
-    content: "Libre";
-    color: white;
+    color: rgba(238, 229, 229, 0.597);
     font-size: 14px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.21);
+    background-color: rgba(240, 200, 200, 0.742);
     padding: 2px 5px;
     border-radius: 3px;
 }
