@@ -5,12 +5,16 @@ body {
     padding: 0;
     text-align: center;
     font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Evitar scroll horizontal */
 }
 
 /* Estilo para el título principal */
 h1 {
     font-family: Georgia, 'Times New Roman', Times, serif;
     margin: 20px 0;
+    text-align: center;
+    width: 100%; /* Asegura que siempre esté centrado */
+    box-sizing: border-box;
 }
 
 /* Estilo para la tabla */
@@ -51,12 +55,15 @@ td {
 .inteligencia {
     background-color: #8bc8453f;
 }
+
 .inteligencia-lab {
     background-color: #54f7a240;
 }
+
 .arquitectura {
     background-color: #ee3df43e;
 }
+
 .arquitectura-lab {
     background-color: #75aeda55;
 }
@@ -72,11 +79,11 @@ td {
 .software-lab {
     background-color: #ea432223;
 }
+
 .Practica {
     background-color: #c00a0a3e;
 }
 
-/* Estilo de hover para las celdas con contenido */
 /* Estilo de hover para las celdas con contenido */
 td:not(.vacio):hover {
     background-color: rgba(157, 208, 208, 0.308); /* Efecto hover claro */
@@ -91,8 +98,9 @@ td:not(.vacio):hover {
 }
 
 .vacio:hover {
-    background-color:rgba(157, 208, 208, 0.308)
+    background-color: rgba(157, 208, 208, 0.308);
 }
+
 .vacio:hover::after {
     color: rgba(238, 229, 229, 0.597);
     font-size: 14px;
@@ -126,16 +134,48 @@ td:not(.vacio):hover {
 
 /* Estilo responsivo para pantallas más pequeñas */
 @media (max-width: 768px) {
+    body {
+        padding: 0 10px; /* Asegura que no haya desbordamiento lateral */
+    }
+
+    h1 {
+        font-size: 1.5em; /* Ajusta el tamaño del título para móvil */
+        text-align: center; /* Asegura que el título esté centrado */
+    }
+
     table {
-        width: 100%;
+        width: 100%; /* Asegura que la tabla se ajuste al ancho de la pantalla */
     }
 
     td,
     th {
         font-size: 0.9em;
+        padding: 8px; /* Reduce el padding para pantallas más pequeñas */
     }
 
     .profesor-info {
-        width: 90%;
+        width: 90%; /* Ajusta el cuadro de información en pantallas pequeñas */
+    }
+}
+
+/* Estilo responsivo para pantallas aún más pequeñas (celulares) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.2em; /* Reduce aún más el tamaño del título */
+        padding: 0 10px; /* Evita que el texto del título se salga del borde */
+    }
+
+    table {
+        font-size: 0.7em; /* Reduce el tamaño del texto de la tabla */
+        width: 100%; /* Ajusta el ancho de la tabla */
+    }
+
+    td,
+    th {
+        padding: 5px; /* Reduce el padding en pantallas muy pequeñas */
+    }
+
+    .profesor-info {
+        width: 100%; /* Ocupa todo el ancho en pantallas pequeñas */
     }
 }
